@@ -1,0 +1,47 @@
+.body{
+    margin: 20px;
+    padding: 0;
+}
+
+/* .container {
+    max-width: 760px;
+    margin: auto;
+    border: black solid 10px;
+    background: yellow;
+} */
+
+.header {
+    display: grid;
+    grid-template-columns: 5fr .6fr .4fr;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    /* margin-right: 20px; */
+}
+
+.logo {
+    margin-right: 10px;
+}
+
+.library {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+}
+
+.book .book-title {
+    margin-top: 5px;
+}
+
+.container {
+    margin-bottom: 50px;
+}
+
+
+.books .library-text {
+    font-weight: bold;
+    font-size: x-large;
+    font-family:'Times New Roman', Times, serif;
+}
+
