@@ -6,13 +6,13 @@ function processInput(e) {
 
   let username = form.querySelector(".username").value;
   let password = form.querySelector(".password").value;
-  let usertype = form.querySelector(".usertype").value;
+  //   let usertype = form.querySelector(".usertype").value;
 
-  let user = new newUser(username, password, usertype);
+  let user = new newUser(username, password, "user");
   addUser(user, (pageFlag = true));
 }
 
-export function addUser(user, pageFlag) {
+function addUser(user, pageFlag) {
   let data = localStorage.getItem("users");
   let users = JSON.parse(data);
 
@@ -42,7 +42,7 @@ function pageUpdate() {
   }, 1500);
 }
 
-export function newUser(username, password, usertype) {
+function newUser(username, password, usertype) {
   this.username = username;
   this.password = password;
   this.usertype = usertype;
