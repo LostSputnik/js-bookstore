@@ -18,14 +18,27 @@ const books = JSON.parse(data);
 const book = books.find((book) => book.isbn == isbn);
 // console.log(book);
 
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".modal");
+  var options = {};
+  var instances = M.Modal.init(elems, options);
+});
+
 let user = localStorage.getItem("currentusername");
 let reviewDiv = "";
 if (!user) {
   reviewDiv = `<div class='write-review'><a href="./login.html">Login to write a review</a></div>
     <hr>`;
 } else {
-  reviewDiv = `<div class='write-review'><a href="./writeReview.html?isbn=${book.isbn}">Write a Review</a></div>
-            <hr>`;
+  reviewDiv = `<div class='write-review'>
+            <!-- Modal Trigger -->
+            <a class="waves-effect waves-light btn modal-trigger" data-target="modal1">Write a Review</a></div>
+            <hr>          
+            `;
+}
+
+{
+  /* <a href="./writeReview.html?isbn=${book.isbn}">Write a Review</a> */
 }
 
 function renderReviewForBook() {

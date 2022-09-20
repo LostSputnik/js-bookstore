@@ -20,6 +20,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="css/details.css" />
   </head>
   <body>
@@ -35,6 +36,46 @@
     <hr />
     <div class="container">
       <div class="book-info"></div>
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <!-- <div class="container"> -->
+          <!-- <div class="book-info"></div> -->
+          <div style="padding-top: 10px" class="write-review">
+            <div class="book-title">Write A Review:</div>
+            <form action="" class="review-form">
+              <input
+                type="text"
+                placeholder="Review Title"
+                id="reviewTitle"
+                name="reviewTitle"
+                style="padding-top: 10px"
+              />
+              <textarea
+                id="textarea1"
+                class="materialize-textarea reviewBody"
+                placeholder="Review Details"
+              ></textarea>
+
+              <button
+                class="btn waves-effect waves-light submit-button"
+                type="submit"
+                name=""
+              >
+                Submit Review
+              </button>
+            </form>
+            <div class="alert"></div>
+          </div>
+          <!-- </div> -->
+
+          <script type="module" src="js/writeReview.js"></script>
+        </div>
+        <!-- <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+            >Agree</a
+          >
+        </div> -->
+      </div>
       <div class="book-reviews">
         <div class="book-title">Reviews on the book:</div>
         <div class="review-list"></div>
