@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 let user = localStorage.getItem("currentusername");
 let reviewDiv = "";
 if (!user) {
-  reviewDiv = `<div class='write-review'><a href="./login.html">Login to write a review</a></div>
+  reviewDiv = `<div class='write-review'><a class="modal-trigger" href="#modal2">Login to write a review</a></div>
     <hr>`;
 } else {
   reviewDiv = `<div class='write-review'>

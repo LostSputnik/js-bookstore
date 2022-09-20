@@ -1,44 +1,49 @@
-const form = document.querySelector('.register-form');
-form.addEventListener('submit', processInput);
+const form = document.querySelector(".register-form");
+form.addEventListener("submit", processInput);
 
-function processInput(e){
-    e.preventDefault();
+function processInput(e) {
+  e.preventDefault();
 
-    let username = form.querySelector('.username').value;
-    let password = form.querySelector('.password').value;
-    let usertype = form.querySelector('.usertype').value;
+  let username = form.querySelector(".username").value;
+  let password = form.querySelector(".password").value;
+  let usertype = form.querySelector(".usertype").value;
 
-    let user = new newUser(username, password, usertype);
-    addUser(user);
+  let user = new newUser(username, password, usertype);
+  addUser(user, (pageFlag = true));
 }
 
-function addUser(user){
-    let data = localStorage.getItem('users');
-    let users = JSON.parse(data);
+export function addUser(user, pageFlag) {
+  let data = localStorage.getItem("users");
+  let users = JSON.parse(data);
 
-    if(!users){
-        users = [];
-    }
+  if (!users) {
+    users = [];
+  }
 
-    user.id = users.length;
-    users.push(user);
-    localStorage.setItem('users', JSON.stringify(users));
+  user.id = users.length;
+  users.push(user);
+  localStorage.setItem("users", JSON.stringify(users));
+  if (pageFlag) {
+    pageUpdate();
+  }
+}
 
-    let alert = document.querySelector('.alert');
-    let output = `
+function pageUpdate() {
+  let alert = document.querySelector(".alert");
+  let output = `
         <div class="chip">
             <i class="fas fa-check"></i> Thank you for registering! Redirecting... 
         </div>
-    `
-    alert.innerHTML = output;
+    `;
+  alert.innerHTML = output;
 
-    setTimeout(() => {
-        window.location.replace('../login.html');
-    }, 1500);
+  setTimeout(() => {
+    window.location.replace("../login.html");
+  }, 1500);
 }
 
-function newUser(username, password, usertype){
-    this.username = username;
-    this.password = password;
-    this.usertype = usertype;
+export function newUser(username, password, usertype) {
+  this.username = username;
+  this.password = password;
+  this.usertype = usertype;
 }

@@ -2,7 +2,9 @@ import { logOut } from "./logout.js";
 import { greetUser } from "./greetuser.js";
 import { renderTopBar } from "./renderTopBar.js";
 import { loadDefaultBooks } from "./loadDefaultBooks.js";
+import { addAdmins } from "./manageAdmins.js";
 
+addAdmins();
 renderTopBar();
 // greetUser();
 
